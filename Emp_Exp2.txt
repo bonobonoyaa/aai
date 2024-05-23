@@ -1,0 +1,16 @@
+@relation employee-1
+@attribute age {youth, middle, senior}
+@attribute income {high, medium, low}
+@attribute class {A, B, C}
+
+@data
+youth, high, A
+youth,medium,B
+youth, low, C
+middle, low, C
+middle, medium, C
+middle, high, A
+senior, low, C
+senior, medium, B
+senior, high, B
+middle, high, B

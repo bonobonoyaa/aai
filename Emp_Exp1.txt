@@ -1,0 +1,20 @@
+@relation employee
+@attribute name nominal 
+@attribute id numeric
+@attribute salary {low,medium,high}
+@attribute exp numeric
+@attribute gender {male,female}
+@attribute phone numeric
+
+@data
+John, 001, medium, 5, male, 123456
+Alice, 002, high, 8, female, 987654
+Bob, 003, low, 2, male, 456789
+Emily, 004, high, 10, female, 789012
+Michael, 005, medium, 6, male, 234567
+Samantha, 006, low, 3, female, 901234
+David, 007, medium, 7, male, 345678
+Sophia, 008, high, 9, female, 678901
+Daniel, 009, low, 4, male, 012345
+Ella, 010, medium, 6, female, 890123
+
