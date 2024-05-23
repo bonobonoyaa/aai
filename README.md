@@ -1,5 +1,5 @@
 # wdm
-# [EX3 Implementation of GSP Algorithm In Python](url)
+# [EX3 Implementation of GSP Algorithm In Python](https://colab.research.google.com/drive/140ZpOvIx-tHz41bvoXeIbajhUnlV8PeG?usp=sharing)
 ```py
 def generate_candidates(dataset, k):
     candidates = defaultdict(int)
@@ -20,7 +20,7 @@ def gsp(dataset, min_support):
         k += 1
     return frequent_patterns
 ```
-# [EX4 Implementation of Cluster and Visitor Segmentation for Navigation patterns](url)
+# [EX4 Implementation of Cluster and Visitor Segmentation for Navigation patterns](https://colab.research.google.com/drive/197e6jqCi1ymRGfVoOZq6Xop782E9MUYO?usp=sharing)
 ```py
 import pandas as pd
 visitor_df = pd.read_csv('/content/clustervisitor.csv')
@@ -46,7 +46,7 @@ for group,condition in age_groups.items():
 
 age_group_labels=list(age_groups.keys())
 ```
-# [EX5 Information Retrieval Using Boolean Model in Python](url)
+# [EX5 Information Retrieval Using Boolean Model in Python](https://colab.research.google.com/drive/1PAVP6o6XL4RTrpfD4YHBvhDWaozlf0qq?usp=sharing)
 ```py
   def create_documents_matrix(self, documents):
           terms = list(self.index.keys())
@@ -91,7 +91,7 @@ age_group_labels=list(age_groups.keys())
               results = results.difference(self.index[term])
       return results if results else set()
 ```
-# [EX6 Information Retrieval Using Vector Space Model in Python](url)
+# [EX6 Information Retrieval Using Vector Space Model in Python](https://colab.research.google.com/drive/1pBDIgm4VcC8f4BrzWt9EYrKD58qWvPFH?usp=sharing)
 ```py
 def search(query, tfidf_matrix, tfidf_vectorizer):
     preprocessed_query = preprocess_text(query)
@@ -104,7 +104,7 @@ def search(query, tfidf_matrix, tfidf_vectorizer):
     results = [(documents[i], similarity_scores[0, i]) for i in sorted_indexes]
     return results
 ```
-# [EX7 Implementation of Link Analysis using HITS Algorithm](url)
+# [EX7 Implementation of Link Analysis using HITS Algorithm](https://colab.research.google.com/drive/1QMQXTqgYjBLgOyRhjcx9v3jsRq6yQMyW?usp=sharing)
 ```py
 def hits_algorithm(adjacency_matrix, max_iterations=100, tol=1.0e-6):
     num_nodes = len(adjacency_matrix)
