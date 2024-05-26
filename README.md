@@ -7,9 +7,9 @@
 |3|[link]()|
 |4|[link]()|
 |5|[link]()|
-|6|[link]()|
-|7|[link]()|
-|8|[link]()|
+|6|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-6---implementation-of-semantic-analysis)|
+|7|[link](https://github.com/bonobonoyaa/aai?tab=readme-ov-file#exp-7---implementation-of-text-summarization)|
+|8|[link](https://github.com/bonobonoyaa/aai?tab=readme-ov-file#exp-8---implementation-of-speech-recognition)|
 
 # [Ex 1 -   ]()
 # [Ex 2 -   ]()
