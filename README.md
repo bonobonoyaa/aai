@@ -17,7 +17,7 @@
 # [Ex 4 -   ]()
 # [Ex 5 -   ]()
 # Ex 6 - Implementation of Semantic Analysis
-```
+```py
 !pip install nltk
 
 import nltk
@@ -79,7 +79,7 @@ for sentence in sentences:
   i+=1
 ```
 # Exp 7 - Implementation of Text Summarization
-```
+```py
 ! pip install nltk
 
 
