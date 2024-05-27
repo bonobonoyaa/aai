@@ -5,7 +5,7 @@
 |1|[link]()|
 |2|[link]()|
 |3|[link]()|
-|4|[link]()|
+|4|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-5---implementation-of-hidden-markov-model)|
 |5|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-5---implementation-of-kalman-filter)|
 |6|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-6---implementation-of-semantic-analysis)|
 |7|[link](https://github.com/bonobonoyaa/aai?tab=readme-ov-file#exp-7---implementation-of-text-summarization)|
@@ -14,7 +14,25 @@
 # [Ex 1 -   ]()
 # [Ex 2 -   ]()
 # [Ex 3 -   ]()
-# [Ex 4 -   ]()
+# [Ex 4 - Implementation of Hidden Markov Model ](https://github.com/Rajeshkannan-Muthukumar/Ex-4--AAI/blob/main/ai_exp4.ipynb)
+```py
+for t in range (1,len(observed_sequence)):
+  for j in range (len(initial_probabilities)):
+    alpha[t,j]=emission_matrix[j,observed_sequence[t]]*np.sum(alpha[t-1,:]*transition_matrix[:,j])
+
+probability = np.sum(alpha[-1,:])
+
+print("The probability of the observed sequence is:",probability)
+
+most_likely_sequence=[]
+for t in range(len(observed_sequence)):
+  if alpha[t,0] > alpha[t,1]:
+    most_likely_sequence.append("sunny")
+  else:
+    most_likely_sequence.append("rainy")
+
+print("The most likely sequence of weather states is:",most_likely_sequence)
+```
 # [Ex 5 - Implementation of Kalman Filter](https://github.com/Kaushika-Anandh/Ex-5--AAI/blob/main/exp5_AAI.ipynb)
 ```py
 def predict(self):
