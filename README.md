@@ -6,7 +6,7 @@
 |2|[link]()|
 |3|[link]()|
 |4|[link]()|
-|5|[link]()|
+|5|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-5---implementation-of-kalman-filter)|
 |6|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-6---implementation-of-semantic-analysis)|
 |7|[link](https://github.com/bonobonoyaa/aai?tab=readme-ov-file#exp-7---implementation-of-text-summarization)|
 |8|[link](https://github.com/bonobonoyaa/aai?tab=readme-ov-file#exp-8---implementation-of-speech-recognition)|
@@ -15,7 +15,37 @@
 # [Ex 2 -   ]()
 # [Ex 3 -   ]()
 # [Ex 4 -   ]()
-# [Ex 5 -   ]()
+# [Ex 5 - Implementation of Kalman Filter](https://github.com/Kaushika-Anandh/Ex-5--AAI/blob/main/exp5_AAI.ipynb)
+```py
+def predict(self):
+    #predict the next state
+    self.x = np.dot(self.F, self.x)
+    self.P = np.dot(np.dot(self.F, self.P),self.F.T) + self.Q
+
+  def update(self, z):
+    #update the state estimate based on the measurement z
+    y = z - np.dot(self.H, self.x)
+    S = np.dot(np.dot(self.H, self.P),self.H.T) + self.R
+    K = np.dot(np.dot(self.P, self.H.T), np.linalg.inv(S))
+    self.x = self.x + np.dot(K, y)
+
+
+kf = KalmanFilter(F,H,Q,R,x0,P0)
+
+true_states=[]
+measurements=[]
+for i in range(100):
+  true_states.append([i*dt, 1]) #assume constant velocity of 1m/s
+  measurements.append(i*dt + np.random.normal(scale=1)) # add measurement noise
+
+
+# run the Kalman filter on the simulated measurements
+est_states = []
+for z in measurements:
+    kf.predict()
+    kf.update(np.array([z]))
+    est_states.append(kf.x)
+```
 # Ex 6 - Implementation of Semantic Analysis
 ```py
 !pip install nltk
