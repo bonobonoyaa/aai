@@ -2,9 +2,9 @@
 ## Redirect 
 |Exp|Link|  
 |---|------| 
-|1|[link]()|
-|2|[link]()|
-|3|[link]()|
+|1|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-1---implementation-of-bayesian-networks-)|
+|2|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-2---implementation-of-exact-inference-method-of-bayesian-network-)|
+|3|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-3---implementation-of-approximate-inference-in-bayesian-networks-)|
 |4|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-4---implementation-of-hidden-markov-model-)|
 |5|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-5---implementation-of-kalman-filter)|
 |6|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-6---implementation-of-semantic-analysis)|
