@@ -5,7 +5,7 @@
 |1|[link]()|
 |2|[link]()|
 |3|[link]()|
-|4|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-4---implementation-of-hidden-markov-model)|
+|4|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-4---implementation-of-hidden-markov-model-)|
 |5|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-5---implementation-of-kalman-filter)|
 |6|[link](https://github.com/bonobonoyaa/aai/tree/main?tab=readme-ov-file#ex-6---implementation-of-semantic-analysis)|
 |7|[link](https://github.com/bonobonoyaa/aai?tab=readme-ov-file#exp-7---implementation-of-text-summarization)|
