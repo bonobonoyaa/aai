@@ -11,9 +11,75 @@
 |7|[link](https://github.com/bonobonoyaa/aai?tab=readme-ov-file#exp-7---implementation-of-text-summarization)|
 |8|[link](https://github.com/bonobonoyaa/aai?tab=readme-ov-file#exp-8---implementation-of-speech-recognition)|
 
-# [Ex 1 -   ]()
-# [Ex 2 -   ]()
-# [Ex 3 -   ]()
+# [Ex 1 - Implementation of Bayesian Networks ]()
+```py
+def probs(data, child, parent1=None, parent2=None):
+    if parent1==None:
+        # Calculate probabilities
+        prob=pd.crosstab(data[child], 'Empty', margins=False, normalize='columns').sort_index().to_numpy().reshape(-1).tolist()
+    elif parent1!=None:
+            # Check if child node has 1 parent or 2 parents
+            if parent2==None:
+                # Caclucate probabilities
+                prob=pd.crosstab(data[parent1],data[child], margins=False, normalize='index').sort_index().to_numpy().reshape(-1).tolist()
+            else:
+                # Caclucate probabilities
+                prob=pd.crosstab([data[parent1],data[parent2]],data[child], margins=False, normalize='index').sort_index().to_numpy().reshape(-1).tolist()
+    else: print("Error in Probability Frequency Calculations")
+    return prob
+
+bbn = Bbn() 
+    .add_node(H9am) 
+    .add_node(H3pm) 
+    .add_node(W) 
+    .add_node(RT) 
+    .add_edge(Edge(H9am, H3pm, EdgeType.DIRECTED)) 
+    .add_edge(Edge(H3pm, RT, EdgeType.DIRECTED)) 
+    .add_edge(Edge(W, RT, EdgeType.DIRECTED))
+```
+# [Ex 2 - Implementation of Exact Inference Method of Bayesian Network ]()
+```py
+cpd_burglary = TabularCPD(variable='Burglary',variable_card=2,values=[[0.999],[0.001]])
+cpd_earthquake = TabularCPD(variable='Earthquake',variable_card=2,values=[[0.998],[0.002]])
+cpd_alarm = TabularCPD(variable ='Alarm',variable_card=2, values=[[0.999, 0.71, 0.06, 0.05],[0.001, 0.29, 0.94, 0.95]],evidence=['Burglary','Earthquake'],evidence_card=[2,2])
+cpd_john_calls = TabularCPD(variable='JohnCalls',variable_card=2,values=[[0.95,0.1],[0.05,0.9]],evidence=['Alarm'],evidence_card=[2])
+cpd_mary_calls = TabularCPD(variable='MaryCalls',variable_card=2,values=[[0.99,0.3],[0.01,0.7]],evidence=['Alarm'],evidence_card=[2])
+
+network.add_cpds(cpd_burglary,cpd_earthquake,cpd_alarm,cpd_john_calls,cpd_mary_calls)
+
+inference = VariableElimination(network)
+
+evidence ={'JohnCalls':1,'MaryCalls':0}
+query_variable ='Burglary'
+result = inference.query(variables=[query_variable],evidence=evidence)
+print(result)
+
+evidence1 ={'JohnCalls':1,'MaryCalls':1}
+query_variable ='Burglary'
+result2 = inference.query(variables=[query_variable],evidence=evidence)
+print(result2)
+```
+# [Ex 3 - Implementation of Approximate Inference in Bayesian Networks ]()
+```py
+cpd_burglary = TabularCPD(variable='Burglary',variable_card=2,values=[[0.999],[0.001]])
+cpd_earthquake = TabularCPD(variable='Earthquake',variable_card=2,values=[[0.998],[0.002]])
+cpd_alarm = TabularCPD(variable ='Alarm',variable_card=2, values=[[0.999, 0.71, 0.06, 0.05],[0.001, 0.29, 0.94, 0.95]],evidence=['Burglary','Earthquake'],evidence_card=[2,2])
+cpd_john_calls = TabularCPD(variable='JohnCalls',variable_card=2,values=[[0.95,0.1],[0.05,0.9]],evidence=['Alarm'],evidence_card=[2])
+cpd_mary_calls = TabularCPD(variable='MaryCalls',variable_card=2,values=[[0.99,0.3],[0.01,0.7]],evidence=['Alarm'],evidence_card=[2])
+
+
+network.add_cpds(cpd_burglary,cpd_earthquake,cpd_alarm,cpd_john_calls,cpd_mary_calls)
+
+
+gibbs_sampler =GibbsSampling(network)
+num_samples=10000
+samples=gibbs_sampler.sample(size=num_samples)
+query_variable='Burglary'
+query_result= samples[query_variable].value_counts(normalize=True)
+print("\n Approximate Probabilities of {}".format(query_variable))
+print(query_result)
+
+```
 # [Ex 4 - Implementation of Hidden Markov Model ](https://github.com/Rajeshkannan-Muthukumar/Ex-4--AAI/blob/main/ai_exp4.ipynb)
 ```py
 for t in range (1,len(observed_sequence)):
